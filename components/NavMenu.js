@@ -5,7 +5,9 @@ export default function NavMenu() {
   return (
     <Navbar bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Link href="/" passHref>
+          <Navbar.Brand>Chores App</Navbar.Brand>
+        </Link>
         <Nav className="me-auto">
           <Link href="/" passHref>
             <Nav.Link>Home</Nav.Link>

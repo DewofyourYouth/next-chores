@@ -1,9 +1,10 @@
+import axios from "axios";
 import { Table, Container } from "react-bootstrap";
 
 function Chores({ data }) {
+  if (!data) return <div>Loading...</div>;
   return (
     <Container>
-      {" "}
       <Table striped hover>
         <thead>
           <tr>
@@ -31,8 +32,7 @@ function Chores({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/airtable");
-  const data = await res.json();
+  const { data } = await axios.get("http://localhost:3000/api/airtable");
   return { props: { data } };
 }
 
