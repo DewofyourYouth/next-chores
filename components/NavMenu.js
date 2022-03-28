@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Container, Navbar, Nav, Image, Button } from "react-bootstrap";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function NavMenu() {
+  const { data: session } = useSession();
   return (
     <Navbar bg="primary" variant="dark">
       <Container>
@@ -17,6 +19,13 @@ export default function NavMenu() {
             <Nav.Link>Chores</Nav.Link>
           </Link>
         </Nav>
+        {session ? (
+          <Button roundedCircle>
+            <Image src={session.user.image} roundedCircle width="50" />
+          </Button>
+        ) : (
+          <Button onClick={signIn}>Sign In</Button>
+        )}
       </Container>
     </Navbar>
   );
