@@ -32,7 +32,7 @@ function Chores({ data }) {
 }
 
 export async function getServerSideProps() {
-  const { data } = await axios.get("http://localhost:3000/api/airtable");
+  const { data } = await axios.get("http://localhost:3000/api/chores");
   return { props: { data } };
 }
 
