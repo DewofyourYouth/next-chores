@@ -7,7 +7,7 @@ export const UserNavDropDown = () => {
     <NavDropdown
       title={
         <Image
-          src={session ? session.user.image : "/no-user-image-icon-0.jpg"}
+          src={session ? session.user.image : "/img/no-user-image-icon-0.jpg"}
           roundedCircle
           width="50"
         />
