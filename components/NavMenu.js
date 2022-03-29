@@ -1,13 +1,6 @@
 import Link from "next/link";
-import {
-  Container,
-  Navbar,
-  Nav,
-  Image,
-  Button,
-  NavDropdown,
-} from "react-bootstrap";
-import { NavLink } from "../components/NavLink";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { NavLink } from "./bootstrap_groups/NavLink";
 import { UserNavDropDown } from "../components/UserNavDropDown";
 
 export default function NavMenu() {

@@ -2,15 +2,16 @@ import Head from "next/head";
 // import Image from "next/image";
 // import styles from "../styles/Home.module.css";
 // import Link from "next/link";
-import { Button, Container } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { AddKid } from "../components/forms/AddKid";
 
 export default function Home() {
   const { data: session } = useSession();
   if (session) {
     const { user } = session;
     return (
-      <Container>
+      <>
         <Head>
           <title>Chores App</title>
           <meta
@@ -21,9 +22,18 @@ export default function Home() {
         </Head>
 
         <main>
-          <h1 className="pt-4">Welcome {user.name}</h1>
+          <Container>
+            <Row>
+              <Col>
+                <h1 className="pt-4">Welcome {user.name}!</h1>
+              </Col>
+            </Row>
+            <Row>
+              <AddKid />
+            </Row>
+          </Container>
         </main>
-      </Container>
+      </>
     );
   }
   return (
