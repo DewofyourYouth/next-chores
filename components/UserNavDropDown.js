@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 import { NavDropdown, Image } from "react-bootstrap";
 
 export const UserNavDropDown = () => {
@@ -17,7 +18,9 @@ export const UserNavDropDown = () => {
     >
       {session && (
         <>
-          <NavDropdown.Item>Settings</NavDropdown.Item>
+          <Link href="/settings" passHref>
+            <NavDropdown.Item>Settings</NavDropdown.Item>
+          </Link>
           <NavDropdown.Item>Profile</NavDropdown.Item>
           <NavDropdown.Divider />
         </>

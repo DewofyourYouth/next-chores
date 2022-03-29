@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useSession, signIn } from "next-auth/react";
 
 import { AddKid } from "../components/forms/AddKid";
+import { AddChore } from "../components/forms/AddChore";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -26,9 +27,6 @@ export default function Home() {
                 <h1 className="pt-4">Welcome {user.name}!</h1>
               </Col>
             </Row>
-            <Row>
-              <AddKid />
-            </Row>
           </Container>
         </main>
       </>
@@ -37,7 +35,7 @@ export default function Home() {
   return (
     <Container>
       <main>
-        Not signed in <br />
+        You are not signed in <br />
         <button onClick={signIn}>Sign In</button>
       </main>
     </Container>
