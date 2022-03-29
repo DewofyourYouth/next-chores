@@ -1,9 +1,7 @@
 import Head from "next/head";
-// import Image from "next/image";
-// import styles from "../styles/Home.module.css";
-// import Link from "next/link";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { Col, Container, Row } from "react-bootstrap";
+import { useSession, signIn } from "next-auth/react";
+
 import { AddKid } from "../components/forms/AddKid";
 
 export default function Home() {

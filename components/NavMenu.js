@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Container, Navbar, Nav } from "react-bootstrap";
+
 import { NavLink } from "./bootstrap_groups/NavLink";
 import { UserNavDropDown } from "../components/UserNavDropDown";
 
-export default function NavMenu() {
+export const NavMenu = () => {
   return (
     <Navbar bg="primary" variant="dark">
       <Container>
@@ -18,4 +19,4 @@ export default function NavMenu() {
       </Container>
     </Navbar>
   );
-}
+};

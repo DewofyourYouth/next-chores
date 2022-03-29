@@ -1,4 +1,5 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+
 const mongoUser = process.env.MONGO_DB_USER;
 const mongoPassword = process.env.MONGO_DB_PASSWORD;
 const db = process.env.MONGO_DB_DB;

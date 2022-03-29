@@ -1,8 +1,8 @@
-import "../styles/globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavMenu from "../components/NavMenu";
 import { SessionProvider } from "next-auth/react";
 import { SSRProvider } from "react-bootstrap";
+
+import { NavMenu } from "../components/NavMenu";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (

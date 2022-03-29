@@ -7,6 +7,7 @@ export const AddKid = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [birthday, setBirthday] = useState(format(new Date(), "yyyy-MM-dd"));
+
   return (
     <Form>
       <Container>

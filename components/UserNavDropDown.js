@@ -3,6 +3,7 @@ import { NavDropdown, Image } from "react-bootstrap";
 
 export const UserNavDropDown = () => {
   const { data: session } = useSession();
+
   return (
     <NavDropdown
       title={
