@@ -19,8 +19,7 @@ export default function Home() {
         </Head>
 
         <main>
-          <h1 className="pt-4">Hello {user.name}</h1>
-          <Button onClick={signOut}>Sign Out</Button>
+          <h1 className="pt-4">Welcome {user.name}</h1>
         </main>
       </Container>
     );

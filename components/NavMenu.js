@@ -1,6 +1,14 @@
 import Link from "next/link";
-import { Container, Navbar, Nav, Image, Button } from "react-bootstrap";
+import {
+  Container,
+  Navbar,
+  Nav,
+  Image,
+  Button,
+  NavDropdown,
+} from "react-bootstrap";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { NavLink } from "../components/NavLink";
 
 export default function NavMenu() {
   const { data: session } = useSession();
@@ -11,18 +19,19 @@ export default function NavMenu() {
           <Navbar.Brand>Chores App</Navbar.Brand>
         </Link>
         <Nav className="me-auto">
-          <Link href="/" passHref>
-            <Nav.Link>Home</Nav.Link>
-          </Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Link href="/chores" passHref>
-            <Nav.Link>Chores</Nav.Link>
-          </Link>
+          <NavLink href="/" title="Home" />
+          <NavLink href="/chores" title="Chores" />
         </Nav>
         {session ? (
-          <Button roundedCircle>
-            <Image src={session.user.image} roundedCircle width="50" />
-          </Button>
+          <NavDropdown
+            title={<Image src={session.user.image} roundedCircle width="50" />}
+            id="navbarScrollingDropdown"
+          >
+            <NavDropdown.Item>Settings</NavDropdown.Item>
+            <NavDropdown.Item>Profile</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item onClick={signOut}>Sign Out</NavDropdown.Item>
+          </NavDropdown>
         ) : (
           <Button onClick={signIn}>Sign In</Button>
         )}
